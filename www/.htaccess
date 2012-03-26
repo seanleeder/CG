@@ -1,0 +1,8 @@
+AuthType Basic
+AuthName "My Protected Area"
+Require valid-user
+
+RewriteEngine on
+RewriteRule ^page/([^/\.]+)/?$ index.php?page=$1 [L]
+RewriteRule ^([^/\.]+)/?$ index.php?profile=$1 [L]
+AuthUserFile "/home/dnsdev/.htpasswds/public_html/passwd"

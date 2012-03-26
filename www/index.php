@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+<?php
+require_once('/home/dnsdev/smarty/configs/set_env.php');
+
+if($_GET)
+{
+	if(isset($_GET['profile']))
+	{
+	$profile = 'Hello ' . htmlspecialchars($_GET['profile']) . '!';
+	$smarty->assign('profile', $profile);
+	}
+}
+
+$smarty->assign('name', 'Ned');
+$smarty->display('index.tpl');
+
+?>
+
